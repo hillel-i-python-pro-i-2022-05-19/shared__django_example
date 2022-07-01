@@ -2,6 +2,7 @@ import logging
 import random
 
 from django.core.management.base import BaseCommand, CommandParser
+from faker import Faker
 
 from apps.humans.models import Human
 
@@ -16,13 +17,13 @@ class Command(BaseCommand):
         amount_of_human = options['amount']
 
         logger = logging.getLogger('create_humans')
-        logger.setLevel(logging.INFO)
 
         logger.info(f'Amount of users before: {Human.objects.count()}')
 
+        fake = Faker()
         for _ in range(amount_of_human):
             human = Human(
-                name='',
+                name=fake.first_name(),
                 age=random.randint(0, 150)
             )
             human.save()

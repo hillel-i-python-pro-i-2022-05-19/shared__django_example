@@ -76,5 +76,13 @@ init-dev-i-create-superuser:
 
 .PHONY: util-i-kill-by-port
 util-i-kill-by-port:
-	sudo lsof -i:8000 -Fp | head -n 1 | sed 's/^p//' | xargs sudo kill
+	@sudo lsof -i:8000 -Fp | head -n 1 | sed 's/^p//' | xargs sudo kill
+
+.PHONY: django-i-create-humans-i-2
+django-i-create-humans-i-2:
+	@python manage.py create_humans 2
+
+.PHONY: d-i-django-i-create-humans-i-2
+d-i-django-i-create-humans-i-2:
+	@docker-compose run --rm app make django-i-create-humans-i-2
 
