@@ -91,7 +91,13 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DB_URL'),
+    'default': env.db_url_config(
+        env.str(
+            'DB_URL',
+            f'postgresql://{env("POSTGRES_USER")}:{env("POSTGRES_PASSWORD")}@'
+            f'{env("POSTGRES_HOST")}:{env("POSTGRES_PORT")}/{env("POSTGRES_DB")}',
+        )
+    ),
 }
 
 # Password validation
