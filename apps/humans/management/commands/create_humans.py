@@ -12,7 +12,10 @@ fake = Faker()
 
 def generate_humans(amount_of_human: int) -> Iterator[Human]:
     for _ in range(amount_of_human):
-        human = Human(name=fake.first_name(), age=random.randint(0, 150))
+        human = Human(
+            name=fake.first_name(),
+            age=random.randint(0, 150),  # noqa: B311
+        )
         human.save()
         yield human
 
