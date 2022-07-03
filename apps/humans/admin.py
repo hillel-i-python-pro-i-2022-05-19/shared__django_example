@@ -15,9 +15,7 @@ class SuperHumanInlineAdmin(admin.TabularInline):
 
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):
-    inlines = (
-        SuperHumanInlineAdmin,
-    )
+    inlines = (SuperHumanInlineAdmin,)
 
 
 @admin.register(SuperHuman)
