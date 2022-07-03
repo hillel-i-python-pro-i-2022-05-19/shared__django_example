@@ -1,7 +1,6 @@
 # Django application
 
 ---
-![Main workflow](https://github.com/hillel-i-python-pro-i-2022-05-19/shared__django_example/actions/workflows/main-workflow.yml/badge.svg)
 
 ## 🏠 Homework
 
@@ -25,21 +24,9 @@ make d-homework-i-purge
 
 ---
 
-## 🛠️ Dev
-
-### Initialize dev
-
-Install dependencies and register pre-commit.
-
-```shell
-make init-dev
-```
-
----
-
 ## 🏗️ Preparation
 
-Make some initialization steps. For example, copy configs. For full-docker and for local dev.
+Make some initialization steps. For example, copy configs.
 
 ```shell
 make init-configs-i-dev
