@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.validators import MaxValueValidator
 from django.db import models
 from django.urls import reverse_lazy
@@ -21,6 +22,13 @@ class Color(models.Model):
 class Human(models.Model):
     name = models.CharField("Name", help_text="It is name of human", max_length=200)
     age = models.PositiveSmallIntegerField("Age", help_text="How old this human", validators=[MaxValueValidator(150)])
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
 
     favourite_color = models.CharField(
         "Favourite color",
