@@ -49,6 +49,7 @@ LOCAL_APPS = [
     "apps.password_generator",
     "apps.humans",
     "apps.sessions_example",
+    "apps.middleware_example",
 ]
 
 THIRD_PARTY_APPS = [
@@ -66,6 +67,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "apps.middleware_example.middleware.SimpleLoggingMiddleware",
+    "apps.middleware_example.middleware.SimpleLoggingMiddleware2",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -157,28 +160,28 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose_custom": {
-            "format": "[%(asctime)s.%(msecs)03d] "
-            "[PROCESS %(process)d %(processName)s] "
-            "[THREAD %(thread)d %(threadName)s] "
-            "%(name)s - %(levelname)s - %(message)s",
-            "datefmt": "%Y-%m-%d %H:%M:%S",
-        },
-    },
-    "handlers": {
-        "console_handler_custom": {
-            "class": "logging.StreamHandler",
-            "formatter": "verbose_custom",
-        },
-    },
-    "loggers": {
-        "": {
-            "level": "INFO",
-            "handlers": ["console_handler_custom"],
-        },
-    },
-}
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "formatters": {
+#         "verbose_custom": {
+#             "format": "[%(asctime)s.%(msecs)03d] "
+#                       "[PROCESS %(process)d %(processName)s] "
+#                       "[THREAD %(thread)d %(threadName)s] "
+#                       "%(name)s - %(levelname)s - %(message)s",
+#             "datefmt": "%Y-%m-%d %H:%M:%S",
+#         },
+#     },
+#     "handlers": {
+#         "console_handler_custom": {
+#             "class": "logging.StreamHandler",
+#             "formatter": "verbose_custom",
+#         },
+#     },
+#     "loggers": {
+#         "": {
+#             "level": "INFO",
+#             "handlers": ["console_handler_custom"],
+#         },
+#     },
+# }
