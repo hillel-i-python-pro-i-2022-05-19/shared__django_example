@@ -1,0 +1,17 @@
+{% extends '_helpers/_base.html' %}
+
+{% block body %}
+    <div>
+        <a href="{% url 'middleware_example:example_1' %}">
+            <button class="btn btn-primary">
+                Example 1
+            </button>
+        </a>
+        <a href="{% url 'middleware_example:example_2' %}">
+            <button class="btn btn-primary">
+                Example 2
+            </button>
+        </a>
+    </div>
+    <p>{{ message }}</p>
+{% endblock %}

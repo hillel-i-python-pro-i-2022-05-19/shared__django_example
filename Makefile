@@ -95,3 +95,7 @@ init-dev:
 .PHONY: pre-commit-run-all
 pre-commit-run-all:
 	@pre-commit run --all-files
+
+.PHONY: pre-commit-run
+pre-commit-run:
+	@pre-commit run
