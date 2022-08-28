@@ -1,5 +1,5 @@
 # Core
-django==4.0.5
+django==4.1
 
 # Get environment variables
 django-environ==0.9.0
@@ -8,17 +8,17 @@ django-environ==0.9.0
 psycopg2-binary==2.9.3
 
 # For humans generating.
-faker==13.14.0
+faker==14.1.0
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
-pre-commit==2.19.0
+pre-commit==2.20.0
 # Upgrade syntax.
-pyupgrade==2.34.0
+pyupgrade==2.37.3
 # Formatter. Apply codestyle.
 black==22.6.0
 # Static analysis
-prospector[with_everything]==1.7.7
+prospector==1.7.7
 # [code_style]-[END]
 
 # Images
